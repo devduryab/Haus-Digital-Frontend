@@ -14,10 +14,11 @@ const Hero = () => (
         alt="A vibrant banner background image"
         fill
         priority
-        className="object-cover"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+        className="object-cover md:object-center"
       />
     </div>
-    <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+    <div className="absolute top-[50%] left-[-20%] w-[70%] h-[70%] rounded-full bg-gradient-to-r from-[#DA49FF] to-indigo-900 opacity-30 blur-3xl" />
 
     <div className="relative w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
       <div className="flex flex-col items-center justify-center space-y-6 md:space-y-8">

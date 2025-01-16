@@ -4,7 +4,13 @@ import { NavLinks } from "@/constants/nav-links-data";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 const Navbar = () => {
@@ -14,14 +20,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="">
-              <Image
-                src="/Logo.png"
-                alt="HD Music Digital"
-                width={52}
-                height={52}
-              />
-            </div>
+            <Image
+              src="/Logo.png"
+              alt="HD Music Digital"
+              width={52}
+              height={52}
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -59,6 +63,11 @@ const Navbar = () => {
                 side="right"
                 className="w-[300px] bg-black border-none"
               >
+                {/* Add SheetHeader for Accessibility */}
+                <SheetHeader>
+                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                </SheetHeader>
+
                 <Link href="/" className="flex items-center justify-center">
                   <div>
                     <Image
@@ -69,7 +78,7 @@ const Navbar = () => {
                     />
                   </div>
                 </Link>
-                <div className="flex flex-col items-center justify-center' space-y-4 mt-8">
+                <div className="flex flex-col items-center justify-center space-y-4 mt-8">
                   {NavLinks.map((link) => (
                     <Link
                       key={link.href}
